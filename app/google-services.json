@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "319437586196",
+    "firebase_url": "https://warungsekretif-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "warungsekretif",
+    "storage_bucket": "warungsekretif.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437586196:android:200df4e13eced36aff8c01",
+        "android_client_info": {
+          "package_name": "com.pb.warungsekre"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7AEtVJFc7pZBU32f8Jz1l7ooWpQ2xAKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
