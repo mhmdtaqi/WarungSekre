@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
+import com.google.android.material.card.MaterialCardView
 
 class AdminActivity : AppCompatActivity() {
 
@@ -35,9 +36,20 @@ class AdminActivity : AppCompatActivity() {
                     val menu = order["menu"] as? String ?: "-"
                     val status = order["status"] as? String ?: "-"
 
-                    val itemLayout = LinearLayout(this@AdminActivity).apply {
+                    val cardView = MaterialCardView(this@AdminActivity).apply {
+                        layoutParams = LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                        ).apply {
+                            setMargins(16, 8, 16, 8)
+                        }
+                        radius = resources.getDimension(R.dimen.card_corner_radius)
+                        cardElevation = resources.getDimension(R.dimen.card_elevation)
+                    }
+
+                    val cardContent = LinearLayout(this@AdminActivity).apply {
                         orientation = LinearLayout.VERTICAL
-                        setPadding(0, 16, 0, 16)
+                        setPadding(32, 24, 32, 24)
                     }
 
                     val infoText = TextView(this@AdminActivity).apply {
@@ -59,9 +71,10 @@ class AdminActivity : AppCompatActivity() {
                         }
                     }
 
-                    itemLayout.addView(infoText)
-                    itemLayout.addView(doneButton)
-                    orderListLayout.addView(itemLayout)
+                    cardContent.addView(infoText)
+                    cardContent.addView(doneButton)
+                    cardView.addView(cardContent)
+                    orderListLayout.addView(cardView)
                 }
             }
 
